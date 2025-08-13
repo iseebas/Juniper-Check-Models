@@ -22,7 +22,20 @@ def obtener_modelo_switch(ip, usuario, password):
     except Exception as e:
         return f"Error: {str(e)}"
 
-def obtener_ruta_ips():
+
+def leer_ips(ruta_archivo):
+    """
+    Lee un archivo con IPs y devuelve una lista
+    """
+    try:
+        with open(ruta_archivo, "r") as f:
+            ips = [line.strip() for line in f.readlines() if line.strip()]
+        return ips
+    except Exception as e:
+        raise FileNotFoundError(f"No se pudo leer el archivo: {e}")
+
+
+#def obtener_ruta_ips():
     ruta = input("Pegá la ruta completa del archivo ips.txt:\n> ").strip()
 
     if not os.path.exists(ruta):
@@ -32,7 +45,7 @@ def obtener_ruta_ips():
 
     return ruta
 
-def main():
+##def main():
     usuario = input("Usuario SSH:")
     password = input("Password SSH:")
 
@@ -53,5 +66,5 @@ def main():
 
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     main()

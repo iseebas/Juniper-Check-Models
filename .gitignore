@@ -5,3 +5,5 @@ resultados.txt
 #Carpetas: 
 venv/
 Creacion Exe/
+Exe-V2/
+__pycache__/
