@@ -1,6 +1,7 @@
 #Archivos:
 ips.txt
 resultados.txt
+.gitignore
 
 #Carpetas: 
 venv/
